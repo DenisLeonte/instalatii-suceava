@@ -259,6 +259,7 @@
     box-shadow: var(--shadow-xl);
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
+    z-index: 1000;
   }
 
   .header__nav--open {
