@@ -284,14 +284,15 @@ section[id] {
 
   .header__links {
     flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
+    align-items: flex-start;
+    gap: 0;
   }
 
   .header__link {
-    font-size: 1.05rem;
-    padding: 14px 16px;
-    border-radius: var(--radius);
+    font-size: 1rem;
+    padding: 12px 4px;
+    border-radius: 0;
+    background: none !important;
   }
 
   .header__nav-cta {
