@@ -1,17 +1,26 @@
 {
   "files": {
-    "main.css": "/instalatii-suceava/static/css/main.dc13aab7.css",
-    "main.js": "/instalatii-suceava/static/js/main.aed5d2dc.js",
+    "main.css": "/instalatii-suceava/static/css/main.650e62de.css",
+    "main.js": "/instalatii-suceava/static/js/main.085d1ebb.js",
     "static/js/453.b2263319.chunk.js": "/instalatii-suceava/static/js/453.b2263319.chunk.js",
+    "static/media/pardoseala.png": "/instalatii-suceava/static/media/pardoseala.c764d59df7ca457807be.png",
     "static/media/map.png": "/instalatii-suceava/static/media/map.d1eb6b47efffa8390963.png",
+    "static/media/dus_1.png": "/instalatii-suceava/static/media/dus_1.036660cecea2bbd66274.png",
+    "static/media/aer_conditionat_2.png": "/instalatii-suceava/static/media/aer_conditionat_2.952b7e8cd5242c1429ae.png",
+    "static/media/ventilatie_1.png": "/instalatii-suceava/static/media/ventilatie_1.ed01c5c35d2504f65213.png",
     "static/media/logo.png": "/instalatii-suceava/static/media/logo.a6e1cd7d5141191efbc5.png",
+    "static/media/cada_1.png": "/instalatii-suceava/static/media/cada_1.e18a7fd8b2b7cd0ac091.png",
+    "static/media/centrala_1.png": "/instalatii-suceava/static/media/centrala_1.0854dd554858f34f1d19.png",
+    "static/media/aer_conditionat_1.png": "/instalatii-suceava/static/media/aer_conditionat_1.caa5a59aa5f3bf407013.png",
+    "static/media/calorifer_1.png": "/instalatii-suceava/static/media/calorifer_1.edd751e18a2b2b12c8a8.png",
+    "static/media/sanitar_1.jpg": "/instalatii-suceava/static/media/sanitar_1.b2257697b36e59054228.jpg",
     "index.html": "/instalatii-suceava/index.html",
-    "main.dc13aab7.css.map": "/instalatii-suceava/static/css/main.dc13aab7.css.map",
-    "main.aed5d2dc.js.map": "/instalatii-suceava/static/js/main.aed5d2dc.js.map",
+    "main.650e62de.css.map": "/instalatii-suceava/static/css/main.650e62de.css.map",
+    "main.085d1ebb.js.map": "/instalatii-suceava/static/js/main.085d1ebb.js.map",
     "453.b2263319.chunk.js.map": "/instalatii-suceava/static/js/453.b2263319.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc13aab7.css",
-    "static/js/main.aed5d2dc.js"
+    "static/css/main.650e62de.css",
+    "static/js/main.085d1ebb.js"
   ]
 }
