@@ -28,7 +28,7 @@ const About: React.FC = () => (
   <section id="despre" className="about">
     <div className="container">
       <div className="section-header">
-        <span className="section-label">Despre noi</span>
+        <span className="section-label">Despre mine</span>
         <h2 className="section-title">Partenerul dumneavoastră de încredere</h2>
         <p className="section-subtitle">
           Cu peste un deceniu de experiență în domeniul instalațiilor, vă ofer
