@@ -11,15 +11,15 @@ interface PortfolioItem {
 }
 
 const items: PortfolioItem[] = [
-  { id: 1, category: 'sanitare', title: 'Baie moderna rezidentiala', desc: 'Instalatie completa baie', color: '#1a3a52' },
-  { id: 2, category: 'sanitare', title: 'Bucatarie apartament', desc: 'Alimentare si canalizare', color: '#245170' },
-  { id: 3, category: 'termice', title: 'Incalzire in pardoseala', desc: 'Casa individuala 120mp', color: '#ff6b35' },
+  { id: 1, category: 'sanitare', title: 'Baie modernă rezidențială', desc: 'Instalație completă baie', color: '#1a3a52' },
+  { id: 2, category: 'sanitare', title: 'Bucătărie apartament', desc: 'Alimentare și canalizare', color: '#245170' },
+  { id: 3, category: 'termice', title: 'Încălzire în pardoseală', desc: 'Casă individuală 120mp', color: '#ff6b35' },
   { id: 4, category: 'termice', title: 'Montaj radiatoare', desc: 'Bloc de apartamente', color: '#e55a28' },
-  { id: 5, category: 'climatizare', title: 'AC birou open-space', desc: 'Spatiu comercial 200mp', color: '#4da6ff' },
-  { id: 6, category: 'climatizare', title: 'Sistem multi-split', desc: 'Vila cu 4 unitati', color: '#2b8ee0' },
-  { id: 7, category: 'sanitare', title: 'Retea sanitara bloc', desc: 'Reabilitare completa', color: '#1a3a52' },
-  { id: 8, category: 'termice', title: 'Centrala termica', desc: 'Montaj si punere in functiune', color: '#ff8c5a' },
-  { id: 9, category: 'climatizare', title: 'AC rezidential', desc: 'Apartament 3 camere', color: '#7ec0ff' },
+  { id: 5, category: 'climatizare', title: 'AC birou open-space', desc: 'Spațiu comercial 200mp', color: '#4da6ff' },
+  { id: 6, category: 'climatizare', title: 'Sistem multi-split', desc: 'Vilă cu 4 unități', color: '#2b8ee0' },
+  { id: 7, category: 'sanitare', title: 'Rețea sanitară bloc', desc: 'Reabilitare completă', color: '#1a3a52' },
+  { id: 8, category: 'termice', title: 'Centrală termică', desc: 'Montaj și punere în funcțiune', color: '#ff8c5a' },
+  { id: 9, category: 'climatizare', title: 'AC rezidențial', desc: 'Apartament 3 camere', color: '#7ec0ff' },
 ];
 
 const filters: { key: Category; label: string }[] = [
@@ -39,14 +39,14 @@ const Portfolio: React.FC = () => {
       <div className="container">
         <div className="section-header">
           <span className="section-label">Portofoliu</span>
-          <h2 className="section-title">Lucrarile noastre</h2>
+          <h2 className="section-title">Lucrările mele</h2>
           <p className="section-subtitle">
-            Cateva dintre proiectele realizate de echipa noastra. Fiecare lucrare
-            reflecta angajamentul nostru fata de calitate si profesionalism.
+            Câteva dintre proiectele pe care le-am realizat. Fiecare lucrare
+            reflectă angajamentul meu față de calitate și profesionalism.
           </p>
         </div>
 
-        <div className="portfolio__filters" role="tablist" aria-label="Filtreaza portofoliul">
+        <div className="portfolio__filters" role="tablist" aria-label="Filtrează portofoliul">
           {filters.map(f => (
             <button
               key={f.key}

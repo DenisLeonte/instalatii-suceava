@@ -1,14 +1,15 @@
 import React from 'react';
+import mapImage from '../assets/map.png';
 
 const Contact: React.FC = () => (
   <section id="contact" className="contact">
     <div className="container">
       <div className="section-header">
         <span className="section-label">Contact</span>
-        <h2 className="section-title">Hai sa discutam</h2>
+        <h2 className="section-title">Hai să discutăm</h2>
         <p className="section-subtitle">
-          Aveti un proiect in minte sau aveti nevoie de o reparatie urgenta?
-          Contactati-ne si va vom raspunde in cel mai scurt timp.
+          Aveți un proiect în minte sau aveți nevoie de o reparație urgentă?
+          Contactați-ne și vă vom răspunde în cel mai scurt timp.
         </p>
       </div>
 
@@ -36,7 +37,7 @@ const Contact: React.FC = () => (
               <a href="mailto:catalin.leonte@icloud.com" className="contact__card-value">
                 catalin.leonte@icloud.com
               </a>
-              <p className="contact__card-note">Raspundem in max. 24h</p>
+              <p className="contact__card-note">Răspundem în max. 24h</p>
             </div>
           </div>
 
@@ -47,7 +48,7 @@ const Contact: React.FC = () => (
             <div>
               <h3 className="contact__card-title">Program de lucru</h3>
               <p className="contact__card-value">Luni - Vineri: 08:00 - 18:00</p>
-              <p className="contact__card-note">Sambata: 09:00 - 14:00</p>
+              <p className="contact__card-note">Sâmbătă: 09:00 - 14:00</p>
             </div>
           </div>
 
@@ -56,19 +57,15 @@ const Contact: React.FC = () => (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <h3 className="contact__card-title">Locatie</h3>
-              <p className="contact__card-value">Suceava, Romania</p>
-              <p className="contact__card-note">Acoperim judetul Suceava</p>
+              <h3 className="contact__card-title">Locație</h3>
+              <p className="contact__card-value">Suceava, România</p>
+              <p className="contact__card-note">Acoperim județul Suceava</p>
             </div>
           </div>
         </div>
 
         <div className="contact__map">
-          <div className="contact__map-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.3"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            <p>Google Maps</p>
-            <span>Harta va fi integrata aici</span>
-          </div>
+          <img src={mapImage} alt="Harta Suceava" className="contact__map-img" />
         </div>
       </div>
     </div>
