@@ -10,23 +10,23 @@ const Footer: React.FC = () => {
         <div className="footer__top">
           <div className="footer__brand">
             <div className="footer__logo-row">
-              <img src={logo} alt="Instalatii Suceava" className="footer__logo" />
+              <img src={logo} alt="Instalații Suceava" className="footer__logo" />
               <div>
-                <span className="footer__name">Instalatii <span>Suceava</span></span>
+                <span className="footer__name">Instalații <span>Suceava</span></span>
                 <p className="footer__tagline">Confort pentru casa ta</p>
               </div>
             </div>
             <p className="footer__desc">
-              Servicii profesionale de instalatii sanitare, termice si climatizare
-              in Suceava si imprejurimi.
+              Servicii profesionale de instalații sanitare, termice și climatizare
+              în Suceava și împrejurimi.
             </p>
           </div>
 
           <div className="footer__col">
             <h4 className="footer__col-title">Servicii</h4>
             <ul>
-              <li><a href="#servicii">Instalatii sanitare</a></li>
-              <li><a href="#servicii">Solutii termice</a></li>
+              <li><a href="#servicii">Instalații sanitare</a></li>
+              <li><a href="#servicii">Soluții termice</a></li>
               <li><a href="#servicii">Climatizare & AC</a></li>
               <li><a href="#portofoliu">Portofoliu</a></li>
             </ul>
@@ -35,9 +35,9 @@ const Footer: React.FC = () => {
           <div className="footer__col">
             <h4 className="footer__col-title">Navigare</h4>
             <ul>
-              <li><a href="#acasa">Acasa</a></li>
+              <li><a href="#acasa">Acasă</a></li>
               <li><a href="#despre">Despre noi</a></li>
-              <li><a href="#experienta">Experienta</a></li>
+              <li><a href="#experienta">Experiență</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -55,14 +55,14 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Suceava, Romania
+                Suceava, România
               </li>
             </ul>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {year} Instalatii Suceava. Toate drepturile rezervate.</p>
+          <p>&copy; {year} Instalații Suceava. Toate drepturile rezervate.</p>
         </div>
       </div>
     </footer>

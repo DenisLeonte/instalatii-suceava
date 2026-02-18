@@ -5,18 +5,18 @@ const types = [
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     ),
-    title: 'Rezidential',
-    desc: 'Case, vile si apartamente individuale. Instalatii complete pentru confortul familiei dumneavoastra, de la baie la bucatarie.',
-    features: ['Case si vile', 'Apartamente', 'Renovari complete', 'Reparatii urgente'],
+    title: 'Rezidențial',
+    desc: 'Case, vile și apartamente individuale. Instalații complete pentru confortul familiei dumneavoastră, de la baie la bucătărie.',
+    features: ['Case și vile', 'Apartamente', 'Renovări complete', 'Reparații urgente'],
     color: 'navy' as const,
   },
   {
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>
     ),
-    title: 'Blocuri de locuinte',
-    desc: 'Experienta extinsa in blocuri de apartamente, inclusiv coloane de alimentare, distribuire si sisteme centralizate.',
-    features: ['Coloane sanitare', 'Sisteme centralizate', 'Contorizare', 'Reabilitare retele'],
+    title: 'Blocuri de locuințe',
+    desc: 'Experiență extinsă în blocuri de apartamente, inclusiv coloane de alimentare, distribuire și sisteme centralizate.',
+    features: ['Coloane sanitare', 'Sisteme centralizate', 'Contorizare', 'Reabilitare rețele'],
     color: 'blue' as const,
   },
   {
@@ -24,8 +24,8 @@ const types = [
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
     ),
     title: 'Comercial & Industrial',
-    desc: 'Solutii pentru spatii comerciale, birouri, hale industriale si institutii publice. Proiecte de orice complexitate.',
-    features: ['Spatii comerciale', 'Birouri', 'Hale industriale', 'Institutii publice'],
+    desc: 'Soluții pentru spații comerciale, birouri, hale industriale și instituții publice. Proiecte de orice complexitate.',
+    features: ['Spații comerciale', 'Birouri', 'Hale industriale', 'Instituții publice'],
     color: 'orange' as const,
   },
 ];
@@ -34,11 +34,11 @@ const Experience: React.FC = () => (
   <section id="experienta" className="experience">
     <div className="container">
       <div className="section-header">
-        <span className="section-label">Experienta noastra</span>
+        <span className="section-label">Experiența mea</span>
         <h2 className="section-title">Proiecte diverse, rezultate excelente</h2>
         <p className="section-subtitle">
-          Am lucrat in toate tipurile de cladiri, de la case individuale la blocuri
-          si spatii industriale. Fiecare proiect primeste aceeasi atentie si dedicare.
+          Am lucrat în toate tipurile de clădiri, de la case individuale la blocuri
+          și spații industriale. Fiecare proiect primește aceeași atenție și dedicare.
         </p>
       </div>
 

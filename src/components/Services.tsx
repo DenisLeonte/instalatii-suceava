@@ -7,9 +7,9 @@ const services = [
         <path d="M12 2v6" /><path d="M12 22v-4" /><path d="M6 8h12l-2 10H8Z" /><circle cx="12" cy="20" r="2" />
       </svg>
     ),
-    title: 'Instalatii sanitare',
-    desc: 'Montaj si reparatii pentru toata gama de instalatii sanitare: alimentare cu apa, canalizare, obiecte sanitare, baterii si accesorii.',
-    items: ['Alimentare apa rece/calda', 'Canalizare si scurgere', 'Montaj obiecte sanitare', 'Reparatii si depanari'],
+    title: 'Instalații sanitare',
+    desc: 'Montaj și reparații pentru toată gama de instalații sanitare: alimentare cu apă, canalizare, obiecte sanitare, baterii și accesorii.',
+    items: ['Alimentare apă rece/caldă', 'Canalizare și scurgere', 'Montaj obiecte sanitare', 'Reparații și depanări'],
     accent: 'navy' as const,
   },
   {
@@ -21,9 +21,9 @@ const services = [
         <rect x="3" y="14" width="18" height="4" rx="1" />
       </svg>
     ),
-    title: 'Solutii termice',
-    desc: 'Sisteme de incalzire eficiente: radiatoare, incalzire in pardoseala, calorifere, centrale termice si instalatii de distributie.',
-    items: ['Montaj radiatoare', 'Incalzire in pardoseala', 'Instalare centrale termice', 'Distributie si echilibrare'],
+    title: 'Soluții termice',
+    desc: 'Sisteme de încălzire eficiente: radiatoare, încălzire în pardoseală, calorifere, centrale termice și instalații de distribuție.',
+    items: ['Montaj radiatoare', 'Încălzire în pardoseală', 'Instalare centrale termice', 'Distribuție și echilibrare'],
     accent: 'orange' as const,
   },
   {
@@ -36,8 +36,8 @@ const services = [
       </svg>
     ),
     title: 'Climatizare & AC',
-    desc: 'Montaj, intretinere si reparatii aer conditionat. Solutii de racire pentru locuinte, birouri si spatii comerciale.',
-    items: ['Montaj aer conditionat', 'Intretinere periodica', 'Reparatii si incarcare freon', 'Sisteme VRF/VRV'],
+    desc: 'Montaj, întreținere și reparații aer condiționat. Soluții de răcire pentru locuințe, birouri și spații comerciale.',
+    items: ['Montaj aer condiționat', 'Întreținere periodică', 'Reparații și încărcare freon', 'Sisteme VRF/VRV'],
     accent: 'blue' as const,
   },
 ];
@@ -46,11 +46,11 @@ const Services: React.FC = () => (
   <section id="servicii" className="services">
     <div className="container">
       <div className="section-header">
-        <span className="section-label">Ce oferim</span>
-        <h2 className="section-title">Serviciile noastre</h2>
+        <span className="section-label">Ce ofer</span>
+        <h2 className="section-title">Serviciile mele</h2>
         <p className="section-subtitle">
-          Acoperim intreaga gama de instalatii pentru constructii &mdash;
-          de la apa si canalizare la incalzire si racire.
+          Acoperim întreaga gamă de instalații pentru construcții &mdash;
+          de la apă și canalizare la încălzire și răcire.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ const Services: React.FC = () => (
               ))}
             </ul>
             <a href="#contact" className="services__card-link">
-              Solicita oferta
+              Solicită ofertă
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </article>
