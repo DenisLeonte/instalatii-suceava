@@ -40,14 +40,13 @@ const About: React.FC = () => (
       <div className="about__content">
         <div className="about__text">
           <p>
-            Mă numesc <strong>Cătălin Leonte</strong> și mă ocup personal de fiecare
-            lucrare, de la proiectare până la execuție. Instalații sanitare, termice
-            sau climatizare — într-o locuință, apartament sau spațiu comercial.
+            Fiecare proiect este tratat cu aceeași seriozitate — de la prima discuție
+            până la finalizare. Ne implicăm direct, comunicăm transparent și oferim
+            soluții adaptate nevoilor fiecărui client.
           </p>
           <p>
-            Pun accent pe atenția la detalii, comunicare sinceră și soluții potrivite
-            fiecărui client în parte. Fie că aveți nevoie de o renovare completă
-            sau de o intervenție urgentă, sunt aici să vă ajut.
+            Fie că este vorba de o renovare completă sau o intervenție urgentă,
+            suntem aici să vă ajutăm rapid și profesionist.
           </p>
         </div>
 

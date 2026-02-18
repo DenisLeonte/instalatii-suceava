@@ -46,8 +46,8 @@ const Services: React.FC = () => (
   <section id="servicii" className="services">
     <div className="container">
       <div className="section-header">
-        <span className="section-label">Ce ofer</span>
-        <h2 className="section-title">Serviciile mele</h2>
+        <span className="section-label">Ce oferim</span>
+        <h2 className="section-title">Serviciile noastre</h2>
         <p className="section-subtitle">
           Acoperim întreaga gamă de instalații pentru construcții &mdash;
           de la apă și canalizare la încălzire și răcire.

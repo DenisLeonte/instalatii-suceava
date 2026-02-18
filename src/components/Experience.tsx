@@ -34,7 +34,7 @@ const Experience: React.FC = () => (
   <section id="experienta" className="experience">
     <div className="container">
       <div className="section-header">
-        <span className="section-label">Experiența mea</span>
+        <span className="section-label">Experiența noastră</span>
         <h2 className="section-title">Proiecte diverse, rezultate excelente</h2>
         <p className="section-subtitle">
           Am lucrat în toate tipurile de clădiri, de la case individuale la blocuri

@@ -92,6 +92,18 @@ section[id] {
   transform: translateY(-1px);
 }
 
+.btn--whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.btn--whatsapp:hover {
+  background: #1ebe5d;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transform: translateY(-1px);
+}
+
 .btn--lg {
   padding: 16px 32px;
   font-size: 1.05rem;
@@ -501,6 +513,13 @@ section[id] {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about__text p {
+    text-align: left;
+  }
 }
 
 .about__text strong {
@@ -877,12 +896,31 @@ section[id] {
 
 .portfolio__item-placeholder {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  background: var(--navy);
 }
 
-.portfolio__item:hover .portfolio__item-img {
-  filter: brightness(1.1);
+.portfolio__item-placeholder-text {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+}
+
+.portfolio__item-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.portfolio__item:hover .portfolio__item-photo {
+  transform: scale(1.05);
 }
 
 .portfolio__item-info {
@@ -932,7 +970,13 @@ section[id] {
 .contact__info {
   display: grid;
   gap: 16px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .contact__info {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .contact__card {
@@ -981,7 +1025,7 @@ section[id] {
   font-weight: 600;
   color: var(--gray-900);
   display: block;
-  white-space: nowrap;
+  word-break: break-word;
 }
 
 a.contact__card-value:hover {
@@ -997,6 +1041,13 @@ a.contact__card-value:hover {
 .contact__map {
   border-radius: var(--radius-xl);
   overflow: hidden;
+  max-height: 260px;
+}
+
+@media (min-width: 768px) {
+  .contact__map {
+    max-height: none;
+  }
 }
 
 .contact__map-img {
