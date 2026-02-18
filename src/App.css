@@ -917,8 +917,9 @@ section[id] {
 
 @media (min-width: 768px) {
   .contact__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     gap: 48px;
+    align-items: center;
   }
 }
 
