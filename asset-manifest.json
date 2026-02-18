@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/instalatii-suceava/static/css/main.6b4c4ec9.css",
-    "main.js": "/instalatii-suceava/static/js/main.722cf5c7.js",
+    "main.css": "/instalatii-suceava/static/css/main.dc13aab7.css",
+    "main.js": "/instalatii-suceava/static/js/main.aed5d2dc.js",
     "static/js/453.b2263319.chunk.js": "/instalatii-suceava/static/js/453.b2263319.chunk.js",
     "static/media/map.png": "/instalatii-suceava/static/media/map.d1eb6b47efffa8390963.png",
     "static/media/logo.png": "/instalatii-suceava/static/media/logo.a6e1cd7d5141191efbc5.png",
     "index.html": "/instalatii-suceava/index.html",
-    "main.6b4c4ec9.css.map": "/instalatii-suceava/static/css/main.6b4c4ec9.css.map",
-    "main.722cf5c7.js.map": "/instalatii-suceava/static/js/main.722cf5c7.js.map",
+    "main.dc13aab7.css.map": "/instalatii-suceava/static/css/main.dc13aab7.css.map",
+    "main.aed5d2dc.js.map": "/instalatii-suceava/static/js/main.aed5d2dc.js.map",
     "453.b2263319.chunk.js.map": "/instalatii-suceava/static/js/453.b2263319.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b4c4ec9.css",
-    "static/js/main.722cf5c7.js"
+    "static/css/main.dc13aab7.css",
+    "static/js/main.aed5d2dc.js"
   ]
 }
