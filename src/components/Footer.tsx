@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="footer__credit">
-          <p>Îți place acest site? Contactează-ne la <a href="mailto:denistechs@gmail.com">denistechs@gmail.com</a></p>
+          <p>Îți place acest site? Contactează-mă la <a href="mailto:denistechs@gmail.com">denistechs@gmail.com</a></p>
         </div>
       </div>
     </footer>

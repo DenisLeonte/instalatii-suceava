@@ -1166,12 +1166,12 @@ a.contact__card-value:hover {
 .footer__credit {
   padding-bottom: 20px;
   text-align: center;
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer__credit a {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
 }
 
