@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/instalatii-suceava/static/css/main.af1ddc38.css",
-    "main.js": "/instalatii-suceava/static/js/main.1ef2e63a.js",
-    "static/js/453.b2263319.chunk.js": "/instalatii-suceava/static/js/453.b2263319.chunk.js",
-    "static/media/map.png": "/instalatii-suceava/static/media/map.d1eb6b47efffa8390963.png",
-    "static/media/pardoseala.png": "/instalatii-suceava/static/media/pardoseala.369d1dacbaa7e9cd674b.png",
-    "static/media/centrala_2.png": "/instalatii-suceava/static/media/centrala_2.f3badf878080a4cae27b.png",
-    "static/media/dus_1.png": "/instalatii-suceava/static/media/dus_1.d488944f74ca4e5b2ed2.png",
-    "static/media/aer_conditionat_2.png": "/instalatii-suceava/static/media/aer_conditionat_2.f0fb82ca72e29e8876be.png",
-    "static/media/ventilatie_1.png": "/instalatii-suceava/static/media/ventilatie_1.ed01c5c35d2504f65213.png",
-    "static/media/logo.png": "/instalatii-suceava/static/media/logo.a6e1cd7d5141191efbc5.png",
-    "static/media/centrala_1.png": "/instalatii-suceava/static/media/centrala_1.1366575e974a0b904bcd.png",
-    "static/media/cada_1.png": "/instalatii-suceava/static/media/cada_1.ab2ad0308c480ca88195.png",
-    "static/media/aer_conditionat_1.png": "/instalatii-suceava/static/media/aer_conditionat_1.caa5a59aa5f3bf407013.png",
-    "static/media/sanitar_1.jpg": "/instalatii-suceava/static/media/sanitar_1.5d42c203c553f73f988e.jpg",
-    "static/media/calorifer_1.png": "/instalatii-suceava/static/media/calorifer_1.edd751e18a2b2b12c8a8.png",
-    "index.html": "/instalatii-suceava/index.html",
-    "main.af1ddc38.css.map": "/instalatii-suceava/static/css/main.af1ddc38.css.map",
-    "main.1ef2e63a.js.map": "/instalatii-suceava/static/js/main.1ef2e63a.js.map",
-    "453.b2263319.chunk.js.map": "/instalatii-suceava/static/js/453.b2263319.chunk.js.map"
+    "main.css": "/static/css/main.af1ddc38.css",
+    "main.js": "/static/js/main.bb4f11a4.js",
+    "static/js/453.b2263319.chunk.js": "/static/js/453.b2263319.chunk.js",
+    "static/media/map.png": "/static/media/map.d1eb6b47efffa8390963.png",
+    "static/media/pardoseala.png": "/static/media/pardoseala.369d1dacbaa7e9cd674b.png",
+    "static/media/centrala_2.png": "/static/media/centrala_2.f3badf878080a4cae27b.png",
+    "static/media/dus_1.png": "/static/media/dus_1.d488944f74ca4e5b2ed2.png",
+    "static/media/aer_conditionat_2.png": "/static/media/aer_conditionat_2.f0fb82ca72e29e8876be.png",
+    "static/media/ventilatie_1.png": "/static/media/ventilatie_1.ed01c5c35d2504f65213.png",
+    "static/media/logo.png": "/static/media/logo.a6e1cd7d5141191efbc5.png",
+    "static/media/centrala_1.png": "/static/media/centrala_1.1366575e974a0b904bcd.png",
+    "static/media/cada_1.png": "/static/media/cada_1.ab2ad0308c480ca88195.png",
+    "static/media/aer_conditionat_1.png": "/static/media/aer_conditionat_1.caa5a59aa5f3bf407013.png",
+    "static/media/sanitar_1.jpg": "/static/media/sanitar_1.5d42c203c553f73f988e.jpg",
+    "static/media/calorifer_1.png": "/static/media/calorifer_1.edd751e18a2b2b12c8a8.png",
+    "index.html": "/index.html",
+    "main.af1ddc38.css.map": "/static/css/main.af1ddc38.css.map",
+    "main.bb4f11a4.js.map": "/static/js/main.bb4f11a4.js.map",
+    "453.b2263319.chunk.js.map": "/static/js/453.b2263319.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.af1ddc38.css",
-    "static/js/main.1ef2e63a.js"
+    "static/js/main.bb4f11a4.js"
   ]
 }
