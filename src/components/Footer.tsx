@@ -64,6 +64,10 @@ const Footer: React.FC = () => {
         <div className="footer__bottom">
           <p>&copy; {year} Instalații Suceava. Toate drepturile rezervate.</p>
         </div>
+
+        <div className="footer__credit">
+          <p>Îți place acest site? Contactează-ne la <a href="mailto:denistechs@gmail.com">denistechs@gmail.com</a></p>
+        </div>
       </div>
     </footer>
   );

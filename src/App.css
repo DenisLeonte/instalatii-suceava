@@ -1157,10 +1157,26 @@ a.contact__card-value:hover {
 }
 
 .footer__bottom {
-  padding: 24px 0;
+  padding: 24px 0 8px;
   text-align: center;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__credit {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.footer__credit a {
+  color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+.footer__credit a:hover {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* =============================================
