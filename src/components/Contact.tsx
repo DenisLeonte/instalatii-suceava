@@ -1,75 +1,117 @@
-import React from 'react';
-import mapImage from '../assets/map.png';
+import React, { FormEvent } from 'react';
 
-const Contact: React.FC = () => (
-  <section id="contact" className="contact">
-    <div className="container">
-      <div className="section-header">
-        <span className="section-label">Contact</span>
-        <h2 className="section-title">Hai să discutăm</h2>
-        <p className="section-subtitle">
-          Aveți un proiect în minte sau aveți nevoie de o reparație urgentă?
-          Contactați-ne și vă vom răspunde în cel mai scurt timp.
-        </p>
-      </div>
+const PHONE = '+40742634550';
+const PHONE_DISPLAY = '0742 634 550';
+const EMAIL = 'catalin.leonte@icloud.com';
 
-      <div className="contact__grid">
-        <div className="contact__info">
-          <div className="contact__card">
-            <div className="contact__card-icon contact__card-icon--navy">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <h3 className="contact__card-title">Telefon</h3>
-              <a href="tel:+40 742 634 550" className="contact__card-value">
-                +40 742 634 550
-              </a>
-              <p className="contact__card-note">Disponibil Luni - Vineri</p>
-            </div>
-          </div>
-
-          <div className="contact__card">
-            <div className="contact__card-icon contact__card-icon--orange">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div>
-              <h3 className="contact__card-title">Email</h3>
-              <a href="mailto:catalin.leonte@icloud.com" className="contact__card-value">
-                catalin.leonte@icloud.com
-              </a>
-              <p className="contact__card-note">Răspundem în max. 24h</p>
-            </div>
-          </div>
-
-          <div className="contact__card">
-            <div className="contact__card-icon contact__card-icon--blue">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <h3 className="contact__card-title">Program de lucru</h3>
-              <p className="contact__card-value">Luni - Vineri: 08:00 - 18:00</p>
-              <p className="contact__card-note">Sâmbătă: 09:00 - 14:00</p>
-            </div>
-          </div>
-
-          <div className="contact__card">
-            <div className="contact__card-icon contact__card-icon--navy">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h3 className="contact__card-title">Locație</h3>
-              <p className="contact__card-value">Suceava, România</p>
-              <p className="contact__card-note">Acoperim județul Suceava</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="contact__map">
-          <img src={mapImage} alt="Harta Suceava" className="contact__map-img" />
-        </div>
-      </div>
-    </div>
-  </section>
+const PhoneIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>
+  </svg>
 );
+const MailIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2"/>
+    <path d="m3 7 9 6 9-6"/>
+  </svg>
+);
+const MapPinIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/>
+    <circle cx="12" cy="9" r="2.5"/>
+  </svg>
+);
+const ArrowRIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+  </svg>
+);
+
+const infoItems = [
+  { icon: <PhoneIcon />, line1: PHONE_DISPLAY,   line2: 'L–S, 7:00 – 20:00',     href: `tel:${PHONE}` },
+  { icon: <MailIcon />,  line1: EMAIL,            line2: 'răspund în 24 de ore',   href: `mailto:${EMAIL}` },
+  { icon: <MapPinIcon />,line1: 'Suceava',        line2: 'jud. Suceava',           href: '#' },
+];
+
+const Contact: React.FC = () => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
+
+  return (
+    <section id="contact" className="contact">
+      <div className="container">
+        <div className="contact__grid">
+          <div>
+            <span className="eyebrow contact__eyebrow">Hai să vorbim</span>
+            <h2 className="h-section contact__title">
+              Cere o ofertă.<br/>
+              <em>Răspund azi.</em>
+            </h2>
+            <p className="contact__lede">
+              Sună-mă direct dacă e urgent. Dacă nu, scrie-mi două rânduri și te caut eu.
+              Răspund personal — fără secretar, fără dispecer.
+            </p>
+
+            <div className="contact__info-list">
+              {infoItems.map((item) => (
+                <a key={item.line1} href={item.href} className="contact__info-item">
+                  <div className="contact__info-icon">{item.icon}</div>
+                  <div>
+                    <div className="contact__info-line1">{item.line1}</div>
+                    <div className="contact__info-line2">{item.line2}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <form className="contact__form" onSubmit={handleSubmit}>
+            <div className="contact__form-row">
+              <div className="contact__field">
+                <label className="contact__label">Numele tău</label>
+                <input className="contact__input" placeholder="ex. Maria Popescu" />
+              </div>
+              <div className="contact__field">
+                <label className="contact__label">Telefon</label>
+                <input className="contact__input" type="tel" placeholder="07__ ___ ___" />
+              </div>
+              <div className="contact__field contact__field--full">
+                <label className="contact__label">Ce ai nevoie?</label>
+                <select className="contact__select" defaultValue="">
+                  <option value="" disabled>Alege un serviciu…</option>
+                  <option>Instalații sanitare</option>
+                  <option>Centrală termică / încălzire</option>
+                  <option>Aer condiționat</option>
+                  <option>Climatizare industrială</option>
+                  <option>Sistem de filtrare a apei</option>
+                  <option>Intervenție rapidă</option>
+                  <option>Altceva</option>
+                </select>
+              </div>
+              <div className="contact__field contact__field--full">
+                <label className="contact__label">Adresă (oraș sau cartier)</label>
+                <input className="contact__input" placeholder="ex. Suceava, Burdujeni" />
+              </div>
+              <div className="contact__field contact__field--full">
+                <label className="contact__label">Descrie pe scurt (opțional)</label>
+                <textarea className="contact__textarea" placeholder="Ce s-a întâmplat, când a început, ce ai încercat deja…" />
+              </div>
+            </div>
+
+            <div className="contact__form-footer">
+              <p className="contact__form-note">
+                Datele tale rămân între noi. Nu trimit oferte comerciale, nu vând lista.
+              </p>
+              <button type="submit" className="btn btn--brand">
+                Trimite cererea <ArrowRIcon />
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Contact;
