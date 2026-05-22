@@ -1,78 +1,128 @@
 import React from 'react';
 
-const services = [
+const ArrowRIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+  </svg>
+);
+
+const DropIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11Z"/>
+    <path d="M9 14a3 3 0 0 0 3 3"/>
+  </svg>
+);
+const BoilerIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="6" y="3" width="12" height="18" rx="2"/>
+    <circle cx="12" cy="10" r="2.4"/>
+    <path d="M9 16h2M13 16h2"/>
+  </svg>
+);
+const SnowflakeIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M12 2v20M4.5 7l15 10M4.5 17l15-10"/>
+    <path d="M9 4l3 2 3-2M9 20l3-2 3 2"/>
+    <path d="M3 9l2 3-2 3M21 9l-2 3 2 3"/>
+  </svg>
+);
+const FactoryIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M3 21V11l5 3V9l5 3V8l8 5v8Z"/>
+    <path d="M9 21v-4M14 21v-4M19 21v-4"/>
+  </svg>
+);
+const FilterIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M4 5h16l-6 8v6l-4 1v-7Z"/>
+    <path d="M9 13h6"/>
+  </svg>
+);
+const ClockIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 7v5l3.5 2"/>
+  </svg>
+);
+
+interface Service {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  tags: string[];
+}
+
+const services: Service[] = [
   {
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v6" /><path d="M12 22v-4" /><path d="M6 8h12l-2 10H8Z" /><circle cx="12" cy="20" r="2" />
-      </svg>
-    ),
+    icon: <DropIcon />,
     title: 'Instalații sanitare',
-    desc: 'Montaj și reparații pentru toată gama de instalații sanitare: alimentare cu apă, canalizare, obiecte sanitare, baterii și accesorii.',
-    items: ['Alimentare apă rece/caldă', 'Canalizare și scurgere', 'Montaj obiecte sanitare', 'Reparații și depanări'],
-    accent: 'navy' as const,
+    desc: 'Montez și repar țevi, baterii, lavoare, vase WC. Lucrez cu Grohe, Hansgrohe, Geberit.',
+    tags: ['Baterii & robineți', 'Țevi PPR/cupru', 'Obiecte sanitare'],
   },
   {
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 12c0-3 2.5-6 2.5-6S17 6 17 9c0 1.5-.6 2.8-1.5 3.7" />
-        <path d="M12 12c0-3-2.5-6-2.5-6S7 6 7 9c0 1.5.6 2.8 1.5 3.7" />
-        <path d="M12 12v10" /><path d="M4 22h16" />
-        <rect x="3" y="14" width="18" height="4" rx="1" />
-      </svg>
-    ),
-    title: 'Soluții termice',
-    desc: 'Sisteme de încălzire eficiente: radiatoare, încălzire în pardoseală, calorifere, centrale termice și instalații de distribuție.',
-    items: ['Montaj radiatoare', 'Încălzire în pardoseală', 'Instalare centrale termice', 'Distribuție și echilibrare'],
-    accent: 'orange' as const,
+    icon: <BoilerIcon />,
+    title: 'Centrale termice și încălzire',
+    desc: 'Montaj, punere în funcțiune, service și revizii anuale. Parteneri Bosch, Viessmann, Vaillant.',
+    tags: ['Montaj „la cheie"', 'Revizii ISCIR', 'Pardoseală caldă'],
   },
   {
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 12h4" /><path d="M18 12h4" /><path d="M12 2v4" /><path d="M12 18v4" />
-        <path d="m4.93 4.93 2.83 2.83" /><path d="m16.24 16.24 2.83 2.83" />
-        <path d="m19.07 4.93-2.83 2.83" /><path d="m7.76 16.24-2.83 2.83" />
-        <circle cx="12" cy="12" r="4" />
-      </svg>
-    ),
-    title: 'Climatizare & AC',
-    desc: 'Montaj, întreținere și reparații aer condiționat. Soluții de răcire pentru locuințe, birouri și spații comerciale.',
-    items: ['Montaj aer condiționat', 'Întreținere periodică', 'Reparații și încărcare freon', 'Sisteme VRF/VRV'],
-    accent: 'blue' as const,
+    icon: <SnowflakeIcon />,
+    title: 'Aer condiționat',
+    desc: 'Montaj, mutare și service pentru aparate split, multi-split sau VRF. Daikin, Mitsubishi, LG.',
+    tags: ['Split & multi-split', 'Service & curățare', 'Reîncărcare freon'],
+  },
+  {
+    icon: <FactoryIcon />,
+    title: 'Climatizare industrială',
+    desc: 'Sisteme VRF/VRV, rooftop, chillere — pentru spații comerciale, birouri și hale industriale.',
+    tags: ['VRF / VRV', 'Rooftop', 'Chillere'],
+  },
+  {
+    icon: <FilterIcon />,
+    title: 'Sisteme de filtrare a apei',
+    desc: 'Filtre, dedurizatoare, osmoză inversă — apă bună de băut sau soluție pentru toată locuința.',
+    tags: ['Osmoză inversă', 'Dedurizatoare', 'Filtre pentru casă'],
+  },
+  {
+    icon: <ClockIcon />,
+    title: 'Intervenții rapide',
+    desc: 'Țeavă spartă, centrală oprită, aer condiționat în avarie. Suni, vin în aceeași zi.',
+    tags: ['L–S, 7–20', 'Aceeași zi'],
   },
 ];
 
 const Services: React.FC = () => (
   <section id="servicii" className="services">
     <div className="container">
-      <div className="section-header">
-        <span className="section-label">Ce oferim</span>
-        <h2 className="section-title">Serviciile noastre</h2>
-        <p className="section-subtitle">
-          Acoperim întreaga gamă de instalații pentru construcții &mdash;
-          de la apă și canalizare la încălzire și răcire.
+      <div className="services__header">
+        <div>
+          <span className="eyebrow">Ce fac</span>
+          <h2 className="h-section services__title">
+            Șase lucruri pe care le fac.<br/>
+            Toate <em>cum trebuie</em>.
+          </h2>
+        </div>
+        <p className="lede services__lede">
+          De la robinet care pică la centrală termică montată „la cheie" — prețul fix
+          înainte de a începe și garanție scrisă la final.
         </p>
       </div>
 
       <div className="services__grid">
-        {services.map((s, i) => (
-          <article className={`services__card services__card--${s.accent}`} key={i}>
-            <div className="services__card-icon">{s.icon}</div>
-            <h3 className="services__card-title">{s.title}</h3>
-            <p className="services__card-desc">{s.desc}</p>
-            <ul className="services__card-list">
-              {s.items.map((item, j) => (
-                <li key={j}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  {item}
-                </li>
+        {services.map((s) => (
+          <div key={s.title} className="services__cell">
+            <div className="services__icon">{s.icon}</div>
+            <div className="services__name">{s.title}</div>
+            <p className="services__desc">{s.desc}</p>
+            <div className="services__tags">
+              {s.tags.map(t => (
+                <span key={t} className="services__tag">{t}</span>
               ))}
-            </ul>
-            <a href="#contact" className="services__card-link">
-              Solicită ofertă
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+            <a href="#contact" className="services__link">
+              Cere ofertă <ArrowRIcon />
             </a>
-          </article>
+          </div>
         ))}
       </div>
     </div>
