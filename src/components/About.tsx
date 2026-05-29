@@ -31,9 +31,8 @@ const About: React.FC = () => (
         <span className="section-label">Despre mine</span>
         <h2 className="section-title">Partenerul dumneavoastră de încredere</h2>
         <p className="section-subtitle">
-          Cu peste un deceniu de experiență în domeniul instalațiilor, vă ofer
-          servicii complete de instalații sanitare, termice și climatizare
-          în Suceava și împrejurimi.
+          Instalator autorizat cu peste un deceniu de experiență, ofer servicii
+          complete de instalații sanitare, termice și climatizare în Suceava și împrejurimi.
         </p>
       </div>
 
@@ -46,7 +45,7 @@ const About: React.FC = () => (
           </p>
           <p>
             Fie că este vorba de o renovare completă sau o intervenție urgentă,
-            suntem aici să vă ajutăm rapid și profesionist.
+            ca instalator profesionist în Suceava sunt aici să vă ajut rapid și eficient.
           </p>
         </div>
 

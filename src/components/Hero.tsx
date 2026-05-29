@@ -8,18 +8,18 @@ const Hero: React.FC = () => (
     </div>
 
     <div className="hero__inner">
-      <div className="hero__badge">Servicii profesionale în Suceava</div>
+      <div className="hero__badge">Instalator autorizat în Suceava</div>
 
       <h1 className="hero__title">
-        Instalații sanitare,
+        Instalator Suceava &mdash;
         <br />
-        <span className="hero__title--accent">termice</span> &{' '}
-        <span className="hero__title--blue">climatizare</span>
+        <span className="hero__title--accent">sanitare</span>,{' '}
+        <span className="hero__title--blue">termice</span> & climatizare
       </h1>
 
       <p className="hero__subtitle">
-        Vă oferim soluții complete pentru confortul casei și afacerii dumneavoastră.
-        De la instalații sanitare la sisteme de încălzire și răcire &mdash;
+        Instalator autorizat cu peste 10 ani experiență în Suceava și județul Suceava.
+        Instalații sanitare, termice și climatizare &mdash;
         calitate, promptitudine și prețuri corecte.
       </p>
 
