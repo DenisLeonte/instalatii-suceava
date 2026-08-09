@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PortfolioGrid from '../components/PortfolioGrid.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { business } from '../config/business';
+
+const title = 'Lucrări executate – instalator Suceava';
+const description = `Fotografii din lucrări de instalații sanitare, termice și climatizare executate în ${business.serviceArea.base} și împrejurimi.`;
+---
+
+<Layout title={title} description={description}>
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner">
+        <nav class="breadcrumbs" aria-label="Firimituri">
+          <a href="/">Acasă</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Lucrări</span>
+        </nav>
+        <h1 class="page-hero__title">Lucrări executate</h1>
+        <p class="page-hero__lede">
+          Fotografii din lucrări reale, executate în {business.serviceArea.base} și
+          împrejurimi. Filtrați după tipul lucrării.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <div class="container">
+      <PortfolioGrid filterable={true} />
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Aveți o lucrare asemănătoare?"
+    text="Trimiteți-mi câteva fotografii pe WhatsApp și vă spun ce se poate face."
+  />
+</Layout>

@@ -1,0 +1,90 @@
+---
+import {
+  business,
+  telHref,
+  mailtoHref,
+  warrantyLabel,
+} from '../config/business';
+import { services } from '../config/services';
+
+const year = new Date().getFullYear();
+const hoursLines = business.hours.map(
+  (h) => `${h.label}: ${h.opens} – ${h.closes}`,
+);
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo-row">
+          <img src="/logo-192.png" alt="" width="192" height="192" class="footer__logo" />
+          <div>
+            <span class="footer__name">{business.name}</span>
+            <p class="footer__tagline">{business.tagline}</p>
+          </div>
+        </div>
+        <p class="footer__desc">
+          {business.owner}, instalator în {business.serviceArea.base} de {business.yearsExperience} ani.
+          Lucrez în {business.serviceArea.base} și pe o rază de până la {business.serviceArea.radiusKm} km.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__col-title">Servicii</h2>
+        <ul>
+          {
+            services.map((s) => (
+              <li>
+                {s.slug ? <a href={`/${s.slug}/`}>{s.title}</a> : <span>{s.title}</span>}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__col-title">Navigare</h2>
+        <ul>
+          <li><a href="/">Acasă</a></li>
+          <li><a href="/despre/">Despre</a></li>
+          <li><a href="/lucrari/">Lucrări</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/politica-de-confidentialitate/">Confidențialitate</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__col-title">Contact</h2>
+        <ul>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href={telHref}>{business.phone.display}</a>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href={mailtoHref}>{business.email}</a>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>
+              {hoursLines.map((line) => (<>{line}<br /></>))}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p>{business.legalName} · CUI {business.vatId}</p>
+      <p>{warrantyLabel()} · Deviz înainte de începerea lucrării · Factură la cerere</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {year} {business.name}. Toate drepturile rezervate.</p>
+      <p class="footer__credit">
+        Site de <a href="https://denistechs.com" target="_blank" rel="noopener noreferrer">denistechs.com</a>
+      </p>
+    </div>
+  </div>
+</footer>

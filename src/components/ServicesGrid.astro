@@ -1,0 +1,49 @@
+---
+/**
+ * Service cards. Cards for services that have a page link to it — this is what
+ * turns the new architecture into real internal linking. Previously every card
+ * linked to #contact, so no service page could ever accumulate authority.
+ */
+import { services } from '../config/services';
+
+interface Props {
+  /** Omit a service by key, e.g. on its own page. */
+  exclude?: string;
+}
+const { exclude } = Astro.props;
+const shown = services.filter((s) => s.key !== exclude);
+---
+
+<div class="services__grid">
+  {
+    shown.map((s) => (
+      <article class={`services__card services__card--${s.accent}`}>
+        <h3 class="services__card-title">
+          {s.slug ? <a href={`/${s.slug}/`}>{s.title}</a> : s.title}
+        </h3>
+        <p class="services__card-desc">{s.short}</p>
+        <ul class="services__card-list">
+          {s.items.map((item) => (
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        {
+          s.slug ? (
+            <a href={`/${s.slug}/`} class="services__card-link">
+              Detalii despre {s.title.toLowerCase()}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          ) : (
+            <a href="/contact/" class="services__card-link">
+              Cere o ofertă
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          )
+        }
+      </article>
+    ))
+  }
+</div>

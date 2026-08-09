@@ -1,0 +1,133 @@
+:root {
+  --ink: #10262d;
+  --ink-deep: #07181e;
+  --paper: #f8faf8;
+  --mineral: #e7ece9;
+  --mineral-2: #d6dfdb;
+  --steel: #60777e;
+  --steel-dark: #385158;
+  --copper: #d85c32;
+  --copper-dark: #ad3f20;
+  --water: #167ea5;
+  --water-light: #56a9c6;
+  --heat: #c94432;
+  --heat-light: #e46854;
+  --whatsapp: #16884f;
+  --white: #ffffff;
+  --line: rgba(16, 38, 45, 0.18);
+  --line-dark: rgba(248, 250, 248, 0.2);
+
+  /* Compatibility aliases used by older components. */
+  --navy: var(--ink);
+  --orange: var(--copper);
+  --blue: var(--water);
+  --gray-50: var(--paper);
+  --gray-100: var(--mineral);
+  --gray-200: var(--mineral-2);
+  --gray-500: var(--steel);
+  --gray-700: var(--steel-dark);
+  --gray-900: var(--ink);
+
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, monospace;
+  --shadow-offset: 7px 7px 0 rgba(16, 38, 45, 0.14);
+  --header-height: 82px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 22px);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::selection {
+  background: var(--copper);
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--water-light);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

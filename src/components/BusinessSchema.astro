@@ -1,0 +1,83 @@
+---
+/**
+ * LocalBusiness structured data, generated entirely from config.
+ *
+ * Deliberate omissions, each for a reason:
+ *  - no `streetAddress` and no top-level `geo`: this is a service-area business
+ *    with no public premises, and the previous coordinates pointed at what was
+ *    probably a private home.
+ *  - no `sameAs`: there are no social profiles yet, and an empty array is worse
+ *    than no property.
+ *  - no `priceRange`: pricing is per project.
+ *  - no `hasCredential` until a real document number exists.
+ *  - no `aggregateRating`: there are no reviews yet, and inventing them is fraud.
+ */
+import { business } from '../config/business';
+import { services } from '../config/services';
+
+const id = `${business.url}/#business`;
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Plumber',
+  '@id': id,
+  name: business.name,
+  legalName: business.legalName,
+  vatID: business.vatId,
+  description: `Instalator în ${business.serviceArea.base} cu ${business.yearsExperience} ani de experiență. Instalații sanitare, termice, aer condiționat, piscine și dedurizare.`,
+  url: business.url,
+  telephone: business.phone.href,
+  email: business.email,
+  image: `${business.url}/og-image.jpg`,
+  logo: `${business.url}/logo-512.png`,
+  founder: {
+    '@type': 'Person',
+    name: business.owner,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: business.serviceArea.base,
+    addressRegion: 'Suceava',
+    addressCountry: 'RO',
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      // Suceava city reference point — a public landmark, not a private address.
+      latitude: 47.6635,
+      longitude: 26.2732,
+    },
+    geoRadius: business.serviceArea.radiusKm * 1000,
+  },
+  openingHoursSpecification: business.hours.map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicii instalații',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: s.schemaName },
+    })),
+  },
+};
+
+if (business.socials.length > 0) {
+  schema.sameAs = business.socials.map((s) => s.url);
+}
+
+if (business.credentials.length > 0) {
+  schema.hasCredential = business.credentials.map((c) => ({
+    '@type': 'EducationalOccupationalCredential',
+    credentialCategory: c.title,
+    recognizedBy: { '@type': 'Organization', name: c.authority },
+    identifier: c.number,
+  }));
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

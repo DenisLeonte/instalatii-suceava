@@ -1,0 +1,84 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+import { business } from '../config/business';
+
+const title = 'Instalații termice Suceava – încălzire, calorifere, centrale';
+const description = `Instalații termice în Suceava: montaj calorifere, încălzire în pardoseală și centrale termice. Deviz înainte de lucrare, garanție ${business.warranty.months} luni.`;
+---
+
+<ServicePage
+  title={title}
+  description={description}
+  h1="Instalații termice în Suceava"
+  lede={`Execut sisteme de încălzire complete în ${business.serviceArea.base} și împrejurimi — calorifere, încălzire în pardoseală, montaj de centrale termice și refacerea distribuției.`}
+  serviceKey="termice"
+>
+  <h2>Ce lucrări execut</h2>
+  <ul>
+    <li><strong>Montaj calorifere</strong> — radiatoare din oțel sau aluminiu, înlocuirea celor vechi, mutarea pe alt perete.</li>
+    <li><strong>Încălzire în pardoseală</strong> — trasee montate în șapă, distribuitoare, probe de presiune înainte de turnare.</li>
+    <li><strong>Montaj centrale termice</strong> — partea hidraulică, racordarea la instalația de încălzire și la circuitul de apă caldă.</li>
+    <li><strong>Distribuție și echilibrare</strong> — ca să nu aveți un capăt al casei rece și celălalt fierbinte.</li>
+    <li><strong>Reparații</strong> — pierderi pe traseu, robineți de radiator, aerisiri, presiune care scade.</li>
+  </ul>
+
+  <h2>Calorifere sau încălzire în pardoseală?</h2>
+  <p>
+    Mă întreabă aproape toți clienții care încep o construcție sau o renovare mare.
+    Pardoseala dă un confort mai uniform și funcționează bine la temperaturi joase,
+    ceea ce contează dacă aveți o centrală în condensație. În schimb reacționează
+    mai lent și trebuie gândită înainte de turnarea șapei — după aceea nu se mai
+    poate schimba fără să spargeți.
+  </p>
+  <p>
+    Caloriferele se montează și se modifică mult mai ușor, inclusiv într-o locuință
+    deja finisată. De multe ori soluția bună este mixtă: pardoseală în băi și în
+    living, calorifere în rest. Vin, mă uit la plan și vă spun ce are sens la
+    dumneavoastră.
+  </p>
+
+  <h2>Despre centrale termice</h2>
+  <p>
+    Montez centrale termice și mă ocup de partea hidraulică — racordurile, traseele,
+    vasul de expansiune, legătura cu instalația existentă.
+  </p>
+  <p>
+    Punerea în funcțiune a unei centrale este o operațiune separată de montaj și
+    ține de tipul centralei și de garanția producătorului. Când discutăm lucrarea vă
+    spun exact ce fac eu și ce trebuie făcut de altcineva, ca să nu aveți surprize
+    la garanție.
+  </p>
+
+  <h2>Când este momentul bun pentru astfel de lucrări</h2>
+  <p>
+    Toamna toată lumea își aduce aminte de încălzire în același timp, iar programul
+    se aglomerează. Dacă știți că aveți de făcut o lucrare, sunați vara — se
+    lucrează mai relaxat, iar dacă ceva nu merge din prima aveți timp să remediați
+    înainte de frig.
+  </p>
+
+  <h2>Cum decurge o lucrare</h2>
+  <ul>
+    <li>Discutăm la telefon sau pe WhatsApp, cu fotografii dacă se poate.</li>
+    <li>Vin și văd instalația și spațiul.</li>
+    <li>Primiți <strong>deviz înainte să încep</strong>.</li>
+    <li>Execut lucrarea personal, cu probă de presiune înainte de închiderea traseelor.</li>
+  </ul>
+
+  <h2>Garanție, deviz și factură</h2>
+  <p>
+    <strong>Garanție {business.warranty.months} luni</strong> pentru lucrările pe
+    care le execut, deviz înainte de începere și factură la cerere.
+  </p>
+
+  <h2>Zone în care mă deplasez</h2>
+  <p>
+    {business.serviceArea.base} și împrejurimi, pe o rază de până la
+    {business.serviceArea.radiusKm} km.
+  </p>
+
+  <p>
+    Vedeți <a href="/lucrari/">lucrări de instalații termice</a> pe care le-am
+    executat.
+  </p>
+</ServicePage>
