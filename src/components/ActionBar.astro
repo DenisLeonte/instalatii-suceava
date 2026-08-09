@@ -1,8 +1,17 @@
 ---
 /**
  * Fixed call/WhatsApp bar, mobile only. Both routes get equal weight because
- * the owner accepts either. 56px tall clears the 44px minimum target, and the
- * safe-area inset keeps it above the iOS home indicator.
+ * the owner accepts either. Buttons are 58px so the tap target clears the 44px
+ * minimum even after the label wraps.
+ *
+ * The env(safe-area-inset-bottom) padding sits on each button, not on the bar:
+ * the two halves are different colours, so padding the bar would leave an
+ * uncoloured band over the iOS home indicator. Each button instead grows into
+ * its own strip and keeps its label centred in the top 58px.
+ *
+ * This only works while Layout.astro keeps `viewport-fit=cover` in the viewport
+ * meta. Drop that and iOS reports the inset as 0, the padding silently
+ * collapses, and the taps land on the indicator again.
  */
 import { business, telHref, whatsappHref } from '../config/business';
 ---

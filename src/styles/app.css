@@ -371,7 +371,9 @@
   margin: 0;
   font-size: clamp(4rem, 7.1vw, 7.5rem);
   letter-spacing: -0.047em;
-  line-height: 0.79;
+  /* Romanian comma-below diacritics (ș, ț) descend far enough that anything
+     tighter than ~0.92 collides with the next line's cap-height. */
+  line-height: 0.93;
   text-wrap: balance;
 }
 
@@ -1434,7 +1436,8 @@ a.contact__card-value:hover {
   margin: 0;
   font-size: clamp(4.1rem, 8.4vw, 8.7rem);
   letter-spacing: -0.05em;
-  line-height: 0.78;
+  /* See .hero__title — must clear a ț descender above the next line. */
+  line-height: 0.93;
   text-wrap: balance;
 }
 
@@ -1763,7 +1766,7 @@ a.contact__card-value:hover {
 
   .hero__title {
     font-size: clamp(3.6rem, 17.5vw, 5.9rem);
-    line-height: 0.8;
+    line-height: 0.93;
   }
 
   .hero__title--water,
@@ -1823,6 +1826,18 @@ a.contact__card-value:hover {
   .services__card:last-child:nth-child(odd) {
     min-height: 350px;
     grid-column: span 12;
+  }
+
+  /* The segmented control cannot survive wrapping — the fourth filter orphans
+     onto its own row with no left border. Read them as individual chips
+     instead; they stay aria-pressed toggle buttons either way. */
+  .portfolio__filters {
+    gap: 8px;
+    border-left: 0;
+  }
+
+  .portfolio__filter {
+    border-left: 1px solid var(--line-dark);
   }
 
   .portfolio__grid {
@@ -1891,6 +1906,13 @@ a.contact__card-value:hover {
     padding: 25px 22px;
   }
 
+  /* Phone/WhatsApp/email are the primary conversion targets: pad the anchor to
+     a 44px hit area without touching the display size. The hours card renders
+     <p class="contact__card-value">, which needs no hit area. */
+  a.contact__card-value {
+    padding: 11px 0;
+  }
+
   .footer__top {
     grid-template-columns: 1fr;
     gap: 35px;
@@ -1900,10 +1922,35 @@ a.contact__card-value:hover {
     grid-column: auto;
   }
 
+  /* Footer links were 20px tall on a 31px pitch. Convert the dead gap into hit
+     area rather than adding height: the list gap goes to 0 and the anchor
+     takes it as a 44px box, so the pitch grows by 13px, not by 24. */
+  .footer__col li {
+    margin-bottom: 0;
+  }
+
+  .footer__col li svg {
+    /* Keeps the icon centred on the first line of a 44px anchor/padded span. */
+    margin-top: 15px;
+  }
+
+  .footer__col li > a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .footer__col li > span {
+    display: block;
+    padding: 12px 0;
+  }
+
   .footer__legal,
   .footer__bottom {
     flex-direction: column;
     gap: 11px;
+    /* 0.59rem is 9.4px — too small for the legal identity and warranty lines. */
+    font-size: 0.72rem;
   }
 
   .page-hero {
@@ -1915,9 +1962,15 @@ a.contact__card-value:hover {
     width: 55%;
   }
 
+  /* At this width the 35%-wide bleed accent is only ~70px of it on screen, so
+     it reads as a stray orange stump rather than an edge accent. */
+  .page-hero::after {
+    display: none;
+  }
+
   .page-hero__title {
     font-size: clamp(3.5rem, 14vw, 5.2rem);
-    line-height: 0.83;
+    line-height: 0.93;
   }
 
   .page-hero__actions,
@@ -1960,7 +2013,13 @@ a.contact__card-value:hover {
 
   .action-bar__btn {
     display: flex;
-    min-height: 58px;
+    /* Clears the iOS home indicator. The inset goes on the buttons rather than
+       on .action-bar so each half's own colour fills the strip instead of
+       leaving a transparent band; the label stays centred in the top 58px.
+       env() resolves to 0 without viewport-fit=cover and on non-notched
+       devices, so the bar is unchanged there. */
+    min-height: calc(58px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     align-items: center;
     justify-content: center;
     gap: 9px;
@@ -1982,7 +2041,8 @@ a.contact__card-value:hover {
   }
 
   .footer {
-    padding-bottom: 82px;
+    /* Must track .action-bar's height, including its safe-area padding. */
+    padding-bottom: calc(82px + env(safe-area-inset-bottom, 0px));
   }
 }
 
