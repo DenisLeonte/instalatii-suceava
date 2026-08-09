@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import ServicesGrid from '../components/ServicesGrid.astro';
 import PortfolioGrid from '../components/PortfolioGrid.astro';
 import ContactBlock from '../components/ContactBlock.astro';
@@ -7,31 +8,12 @@ import {
   business,
   telHref,
   whatsappHref,
-  warrantyLabel,
 } from '../config/business';
 import { featuredProjects } from '../config/portfolio';
+import pardoseala from '../assets/pardoseala.png';
 
 const title = 'Instalator Suceava – Instalații sanitare și termice';
 const description = `Instalator în Suceava cu ${business.yearsExperience} ani experiență. Instalații sanitare, termice, aer condiționat și piscine. Deviz înainte de lucrare, garanție ${business.warranty.months} luni.`;
-
-const trust = [
-  {
-    strong: `${business.yearsExperience} ani de experiență`,
-    text: 'În instalații sanitare, termice și climatizare.',
-  },
-  {
-    strong: 'Vin personal la fiecare lucrare',
-    text: 'Nu trimit pe altcineva în locul meu.',
-  },
-  {
-    strong: 'Deviz înainte de începere',
-    text: 'Știți costul înainte să încep lucrarea.',
-  },
-  {
-    strong: warrantyLabel(),
-    text: 'Plus factură la cerere.',
-  },
-];
 
 const faq = [
   {
@@ -153,26 +135,6 @@ const faq = [
     </div>
   </section>
 
-  {/* Replaces the old "10+ / 500+ / 100% clienți mulțumiți" stats, none of
-      which could be substantiated. Every line here is checkable. */}
-  <section class="trust">
-    <div class="container">
-      <div class="trust__grid">
-        {
-          trust.map((t) => (
-            <div class="trust__item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>
-                <strong>{t.strong}</strong>{' '}
-                {t.text}
-              </span>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
   <section id="servicii" class="services">
     <div class="container">
       <div class="section-header">
@@ -210,14 +172,20 @@ const faq = [
         <h2 class="section-title">{business.owner}</h2>
       </div>
       <div class="about__content">
-        <div class="about__stamp" aria-hidden="true">
-          <span>CL</span>
-          <small>INSTALATOR<br />SUCEAVA</small>
-        </div>
+        <figure class="about__work">
+          <Image
+            src={pardoseala}
+            alt="Instalație de încălzire în pardoseală executată înainte de turnarea șapei"
+            widths={[480, 720, 960]}
+            sizes="(max-width: 700px) calc(100vw - 32px), 38vw"
+            class="about__work-image"
+          />
+          <figcaption>
+            <strong>Lucrare reală</strong>
+            <span>Încălzire în pardoseală, înainte de turnarea șapei</span>
+          </figcaption>
+        </figure>
         <div class="about__text">
-          {/* A photograph of Cătălin at work belongs here and is the single
-              highest-value element on the page. Nothing is rendered until one
-              exists — a stock photo or an empty frame would both be worse. */}
           <p>
             Sunt {business.owner} și lucrez ca instalator în {business.serviceArea.base}{' '}
             de aproximativ {business.yearsExperience} ani. Lucrez împreună cu câțiva
@@ -244,20 +212,35 @@ const faq = [
     <div class="container">
       <div class="section-header">
         <span class="section-label">Zone deservite</span>
-        <h2 class="section-title">Unde lucrez</h2>
+        <h2 class="section-title">Ajung și la tine?</h2>
       </div>
       <div class="area__box">
-        <div class="area__visual">
-          <span class="area__radius">{business.serviceArea.radiusKm} km</span>
+        <div class="area__facts">
+          <dl>
+            <div>
+              <dt>Punct de plecare</dt>
+              <dd>{business.serviceArea.base}</dd>
+            </div>
+            <div>
+              <dt>Deplasare</dt>
+              <dd>Până la {business.serviceArea.radiusKm} km</dd>
+            </div>
+          </dl>
         </div>
         <div class="area__copy">
+          <h3>Spune-mi localitatea și ce lucrare ai nevoie.</h3>
           <p>
-            Lucrez în <strong>{business.serviceArea.base}</strong> și în împrejurimi,
-            pe o rază de până la {business.serviceArea.radiusKm} km.
+            Îți confirm direct dacă mă pot deplasa și când pot ajunge. Pentru lucrări
+            mai mari merg și mai departe de zona obișnuită.
           </p>
-          <p class="area__note">
-            Pentru lucrări mai mari mă deplasez și mai departe — sunați și discutăm.
-          </p>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--outline area__cta"
+          >
+            Verifică pe WhatsApp
+          </a>
         </div>
       </div>
     </div>
