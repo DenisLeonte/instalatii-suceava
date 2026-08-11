@@ -1,5 +1,5 @@
 /**
- * The services actually offered, confirmed with the owner on 2026-08-09.
+ * The services actually offered, confirmed with the owner on 2026-08-11.
  *
  * `slug: null` means the service is genuinely offered and is listed on the
  * homepage, but has no dedicated page yet because there is no real photography
@@ -43,12 +43,13 @@ export const services: Service[] = [
     title: 'Instalații termice',
     schemaName: 'Instalații termice',
     short:
-      'Sisteme de încălzire complete: calorifere, încălzire în pardoseală și centrale termice.',
+      'Calorifere, încălzire în pardoseală, montaj centrale și verificări cu cameră termică.',
     items: [
       'Montaj calorifere',
       'Încălzire în pardoseală',
-      'Montaj centrale termice',
+      'Montaj centrale',
       'Distribuție și echilibrare',
+      'Verificarea pierderilor de căldură',
     ],
     accent: 'orange',
   },

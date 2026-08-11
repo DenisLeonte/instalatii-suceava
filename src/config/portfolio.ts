@@ -93,7 +93,7 @@ export const projects: Project[] = [
     id: 'centrala-electrica',
     category: 'termice',
     title: 'Centrală termică electrică',
-    desc: 'Montaj și punere în funcțiune',
+    desc: 'Montaj și racordare hidraulică',
     image: centralaElectrica,
   },
   {
