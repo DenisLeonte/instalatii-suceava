@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# instalatiisuceava.ro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website for **Leonte Install** (PFA Leonte GH Cătălin), a plumbing, heating and
+HVAC business in Suceava, Romania.
 
-## Available Scripts
+Static site built with [Astro](https://astro.build). No UI framework, no backend,
+no client-side routing.
 
-In the project directory, you can run:
+## Commands
 
-### `npm start`
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Dev server on `localhost:4321` |
+| `npm run build` | Static build to `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `node scripts/generate-icons.mjs` | Regenerate favicons, PWA icons and `og-image.jpg` from `src/assets/logo.png` |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deployment
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Cloudflare Pages, via `.github/workflows/deploy-cloudflare.yml`, which runs on
+push to `main`. It needs the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`
+repository secrets. The custom domain is set by `public/CNAME`.
 
-### `npm test`
+## Changing business details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Everything about the business lives in `src/config/business.ts`** — name, legal
+name, CUI, phone, email, hours, service area, warranty. Components, `<head>` tags
+and the JSON-LD all read from it, so the public name is a one-line change.
 
-### `npm run build`
+The trading name `Leonte Install` is provisional; that is why it is a single
+constant rather than a string repeated across the codebase.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Empty fields render nothing rather than placeholder text. `credentials` and
+`socials` are deliberately empty and must stay that way until real values exist —
+see "Content rules" below.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`src/config/services.ts` holds the services. A service with `slug: null` appears
+in lists but has no page of its own yet, because there is no real content or
+photography for one.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Content rules
 
-### `npm run eject`
+These are not stylistic preferences. Breaking them creates legal or trust risk:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **No gas work may be advertised.** No ANRE authorisation is held.
+- **The word "autorizat" may not appear** until `business.credentials` contains a
+  real authority and document number. `hasValidCredentials()` gates the display.
+- **The warranty is verbal, not written.** `warrantyLabel()` renders
+  "Garanție 12 luni", not "Garanție scrisă". Only flip `warranty.written` when it
+  is genuinely printed on the invoice.
+- **No invented statistics, reviews or ratings.** The previous site claimed
+  "500+ proiecte" and "100% clienți mulțumiți"; neither could be substantiated.
+- No street address or precise coordinates: this is a service-area business.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+src/
+  config/       business.ts, services.ts, portfolio.ts — all real-world data
+  layouts/      Layout.astro (head, schema), ServicePage.astro
+  components/   Header, Footer, ActionBar, ServicesGrid, PortfolioGrid, …
+  pages/        one file per URL
+  styles/       base.css (tokens, resets), app.css (components)
+  assets/       source photography, optimised at build time
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+All user-facing text is Romanian. Code, IDs and filenames are English.
 
-## Learn More
+## Images
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Photographs go in `src/assets/` at full size and are referenced through Astro's
+`<Picture>`, which emits AVIF and WebP at multiple widths with correct
+`srcset`/`sizes` and intrinsic dimensions. Do not hand-optimise or put
+photographs in `public/` — that bypasses the pipeline.

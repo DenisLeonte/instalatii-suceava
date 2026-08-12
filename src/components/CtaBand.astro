@@ -1,0 +1,25 @@
+---
+import { business, telHref, whatsappHref } from '../config/business';
+
+interface Props {
+  heading?: string;
+  text?: string;
+}
+const {
+  heading = 'Discutăm lucrarea?',
+  text = 'Sunați sau trimiteți-mi câteva fotografii pe WhatsApp. Înainte să încep lucrarea, vă spun ce se poate face și cât costă.',
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container">
+    <h2>{heading}</h2>
+    <p>{text}</p>
+    <div class="cta-band__actions">
+      <a href={telHref} class="btn btn--primary btn--lg">Sunați la {business.phone.display}</a>
+      <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--lg">
+        Trimiteți fotografii pe WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

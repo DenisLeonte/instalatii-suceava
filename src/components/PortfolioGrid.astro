@@ -1,0 +1,89 @@
+---
+/**
+ * Work grid, optionally filterable.
+ *
+ * The old version declared role="tab" / aria-selected on the filter buttons and
+ * role="tabpanel" on a single shared grid, with no aria-controls, no
+ * aria-labelledby and no arrow-key handling — announced as a tablist that then
+ * behaved nothing like one. These are plain toggle buttons with aria-pressed,
+ * which is what they actually are.
+ */
+import { Picture } from 'astro:assets';
+import { projects, categoryLabels, type Project } from '../config/portfolio';
+
+interface Props {
+  items?: Project[];
+  filterable?: boolean;
+}
+const { items = projects, filterable = false } = Astro.props;
+
+const categories = Object.keys(categoryLabels) as (keyof typeof categoryLabels)[];
+---
+
+{
+  filterable && (
+    <div class="portfolio__filters" id="work-filters">
+      <button type="button" class="portfolio__filter portfolio__filter--active" data-filter="toate" aria-pressed="true">
+        Toate
+      </button>
+      {categories.map((c) => (
+        <button type="button" class="portfolio__filter" data-filter={c} aria-pressed="false">
+          {categoryLabels[c]}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+<div class="portfolio__grid" id="work-grid">
+  {
+    items.map((item, i) => (
+      <article class="portfolio__item" data-category={item.category}>
+        <div class="portfolio__item-img">
+          {/* The first row is roughly above the fold; everything after it is not. */}
+          <Picture
+            src={item.image}
+            alt={item.title}
+            class="portfolio__item-photo"
+            formats={['avif', 'webp']}
+            fallbackFormat="jpeg"
+            widths={[400, 700, 1000]}
+            sizes="(min-width: 900px) 380px, (min-width: 600px) 45vw, 92vw"
+            loading={i < 3 ? 'eager' : 'lazy'}
+            quality={72}
+          />
+        </div>
+        <div class="portfolio__item-info">
+          <h3 class="portfolio__item-title">{item.title}</h3>
+          <p class="portfolio__item-desc">{item.desc}</p>
+        </div>
+      </article>
+    ))
+  }
+</div>
+
+{
+  filterable && (
+    <script>
+      const filters = document.getElementById('work-filters');
+      const grid = document.getElementById('work-grid');
+
+      filters?.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-filter]');
+        if (!btn) return;
+
+        const value = btn.dataset.filter;
+
+        filters.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((b) => {
+          const active = b === btn;
+          b.setAttribute('aria-pressed', String(active));
+          b.classList.toggle('portfolio__filter--active', active);
+        });
+
+        grid?.querySelectorAll<HTMLElement>('[data-category]').forEach((card) => {
+          card.hidden = value !== 'toate' && card.dataset.category !== value;
+        });
+      });
+    </script>
+  )
+}

@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+import { business } from '../config/business';
+
+const title = `Contact – instalator ${business.serviceArea.base}`;
+const description = `Sunați la ${business.phone.display} sau trimiteți fotografii pe WhatsApp. Instalator în ${business.serviceArea.base} și împrejurimi, pe o rază de până la ${business.serviceArea.radiusKm} km.`;
+---
+
+<Layout title={title} description={description}>
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner">
+        <nav class="breadcrumbs" aria-label="Traseu de navigare">
+          <a href="/">Acasă</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Contact</span>
+        </nav>
+        <h1 class="page-hero__title">Contact</h1>
+        <p class="page-hero__lede">
+          Cel mai simplu este să sunați. Dacă nu răspund, sunt probabil pe o lucrare
+          — reveniți cu un apel sau trimiteți-mi un mesaj pe WhatsApp, iar eu vă contactez.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" style="padding-top:56px">
+    <div class="container">
+      <ContactBlock />
+    </div>
+  </section>
+
+  <div class="container">
+    <article class="prose">
+      <h2>Ce să-mi spuneți când sunați</h2>
+      <p>
+        Ca să vă pot da un răspuns util din prima, mă ajută să știu:
+      </p>
+      <ul>
+        <li>Ce fel de lucrare este — sanitară, termică, verificare cu cameră termică, aer condiționat, piscină sau dedurizare.</li>
+        <li>Unde trebuie executată lucrarea — la casă sau la apartament, în ce localitate și la ce etaj.</li>
+        <li>Dacă este o reparație urgentă sau o lucrare planificată.</li>
+        <li>Câteva fotografii, dacă se poate. Acestea mă ajută cel mai mult să înțeleg situația.</li>
+      </ul>
+
+      <h2>Zone în care mă deplasez</h2>
+      <p>
+        Lucrez în {business.serviceArea.base} și în împrejurimi, pe o rază de până
+        la {business.serviceArea.radiusKm} km. Pentru lucrări mai mari mă deplasez
+        și mai departe — sunați și discutăm.
+      </p>
+
+      <h2>Date de facturare</h2>
+      <p>
+        {business.legalName}<br />
+        CUI {business.vatId}
+      </p>
+    </article>
+  </div>
+</Layout>
