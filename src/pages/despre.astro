@@ -4,14 +4,14 @@ import CtaBand from '../components/CtaBand.astro';
 import { business, hasValidCredentials } from '../config/business';
 
 const title = `Despre ${business.owner} – instalator în ${business.serviceArea.base}`;
-const description = `${business.owner}, instalator în ${business.serviceArea.base} de aproximativ ${business.yearsExperience} ani. Instalații sanitare și termice, montaj centrale și verificări cu cameră termică.`;
+const description = `${business.owner}, instalator în ${business.serviceArea.base} de aproximativ ${business.yearsExperience} ani. Instalații sanitare și termice, montaj de centrale și verificări cu cameră termică.`;
 ---
 
 <Layout title={title} description={description}>
   <section class="page-hero">
     <div class="container">
       <div class="page-hero__inner">
-        <nav class="breadcrumbs" aria-label="Firimituri">
+        <nav class="breadcrumbs" aria-label="Traseu de navigare">
           <a href="/">Acasă</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">Despre</span>
@@ -35,10 +35,10 @@ const description = `${business.owner}, instalator în ${business.serviceArea.ba
       <p>
         Mă numesc {business.owner} și lucrez ca instalator în {business.serviceArea.base}{' '}
         de aproximativ {business.yearsExperience} ani.
-        Activitatea o desfășor prin <strong>{business.legalName}</strong>, CUI {business.vatId}.
+        Îmi desfășor activitatea prin <strong>{business.legalName}</strong>, CUI {business.vatId}.
       </p>
       <p>
-        Lucrez împreună cu câțiva oameni de sprijin, pentru lucrările care cer mai
+        Lucrez împreună cu câțiva oameni de sprijin pentru lucrările care cer mai
         multe mâini. Însă la fiecare lucrare vin personal — eu discut cu
         dumneavoastră, eu văd instalația și eu răspund de rezultat. Nu trimit pe
         altcineva în locul meu.
@@ -47,14 +47,13 @@ const description = `${business.owner}, instalator în ${business.serviceArea.ba
       <h2>Ce fac</h2>
       <ul>
         <li><a href="/instalatii-sanitare-suceava/">Instalații sanitare</a> — alimentare cu apă, canalizare, obiecte sanitare, reparații.</li>
-        <li><a href="/instalatii-termice-suceava/">Instalații termice</a> — calorifere, încălzire în pardoseală, montaj centrale și verificarea pierderilor de căldură cu cameră termică.</li>
+        <li><a href="/instalatii-termice-suceava/">Instalații termice</a> — calorifere, încălzire în pardoseală, montaj de centrale și verificarea pierderilor de căldură cu cameră termică.</li>
         <li><a href="/montaj-aer-conditionat-suceava/">Aer condiționat</a> — montaj, întreținere, reparații, ventilație.</li>
         <li><strong>Instalații pentru piscine</strong> — circuite de apă, filtrare, racorduri.</li>
         <li><strong>Sisteme de dedurizare a apei</strong> — montaj și racordare la instalația existentă.</li>
       </ul>
       <p>
-        Lucrez atât la locuințe — case, apartamente, blocuri — cât și la spații
-        comerciale.
+        Execut lucrări în case, apartamente și blocuri, dar și în spații comerciale.
       </p>
 
       {
@@ -74,14 +73,14 @@ const description = `${business.owner}, instalator în ${business.serviceArea.ba
 
       <h2>Cum lucrez</h2>
       <p>
-        Discutăm întâi ce aveți nevoie. Dacă îmi trimiteți fotografii pe WhatsApp,
+        Discutăm întâi despre ce aveți nevoie. Dacă îmi trimiteți fotografii pe WhatsApp,
         de multe ori îmi dau seama din ele despre ce este vorba și vin pregătit.
         Vă spun ce se poate face, vă dau un deviz și, dacă sunteți de acord, mă apuc
         de treabă.
       </p>
       <p>
         Prefer să vă spun de la început dacă o lucrare nu merită făcută sau dacă
-        există o variantă mai simplă și mai ieftină. Pe termen lung asta îmi aduce
+        există o variantă mai simplă și mai ieftină. Pe termen lung, acest lucru îmi aduce
         mai multă treabă decât dacă v-aș vinde ce nu vă trebuie.
       </p>
 

@@ -10,7 +10,7 @@ const description = 'Cum sunt tratate datele dumneavoastră când mă contactaț
   <section class="page-hero">
     <div class="container">
       <div class="page-hero__inner">
-        <nav class="breadcrumbs" aria-label="Firimituri">
+        <nav class="breadcrumbs" aria-label="Traseu de navigare">
           <a href="/">Acasă</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">Politica de confidențialitate</span>
@@ -24,20 +24,20 @@ const description = 'Cum sunt tratate datele dumneavoastră când mă contactaț
     <article class="prose">
       <h2>Cine este operatorul</h2>
       <p>
-        {business.legalName}, CUI {business.vatId}, cu activitate în{' '}
-        {business.serviceArea.base}. Contact: <a href={`mailto:${business.email}`}>{business.email}</a>,
-        telefon {business.phone.display}.
+        Operatorul de date cu caracter personal este {business.legalName}, CUI {business.vatId}, cu activitate în{' '}
+        {business.serviceArea.base}. Mă puteți contacta la numărul de telefon {business.phone.display} sau la
+        adresa de e-mail <a href={`mailto:${business.email}`}>{business.email}</a>.
       </p>
 
       <h2>Ce date colectez prin acest site</h2>
       <p>
         Acest site nu are formulare de contact, nu creează conturi și nu cere date
-        personale. Nu folosește cookie-uri de urmărire și nu vă transmite datele
+        personale. Nu folosește cookie-uri de urmărire și nu transmite datele dumneavoastră
         către rețele de publicitate.
       </p>
       <p>
         Datele dumneavoastră ajung la mine doar dacă alegeți să mă contactați —
-        telefonic, pe WhatsApp sau pe email.
+        telefonic, pe WhatsApp sau prin e-mail.
       </p>
 
       <h2>Ce fac cu datele primite când mă contactați</h2>
@@ -45,28 +45,29 @@ const description = 'Cum sunt tratate datele dumneavoastră când mă contactaț
         <li><strong>Ce date:</strong> numele, numărul de telefon, adresa la care se execută lucrarea și detaliile lucrării, inclusiv fotografiile pe care mi le trimiteți.</li>
         <li><strong>De ce:</strong> ca să pot pregăti devizul, să execut lucrarea și să emit factura.</li>
         <li><strong>Cât timp:</strong> pe durata lucrării și a garanției, plus perioada impusă de legislația fiscală pentru documentele contabile.</li>
-        <li><strong>Cui le transmit:</strong> nimănui, în afara obligațiilor legale (de exemplu contabilitate sau organele fiscale).</li>
+        <li><strong>Cui le transmit:</strong> nu le transmit terților, cu excepția cazurilor impuse de lege (de exemplu, contabilului sau organelor fiscale).</li>
       </ul>
 
       <h2>Comunicarea prin WhatsApp</h2>
       <p>
-        Dacă îmi scrieți pe WhatsApp, conversația trece și prin serviciile Meta
-        Platforms, conform politicii lor de confidențialitate. Dacă preferați să
-        evitați acest lucru, sunați-mă sau scrieți-mi pe email.
+        Dacă îmi scrieți pe WhatsApp, conversația este procesată și prin serviciile Meta
+        Platforms, conform politicii de confidențialitate a companiei. Dacă preferați să
+        evitați acest lucru, sunați-mă sau scrieți-mi prin e-mail.
       </p>
 
       <h2>Găzduire</h2>
       <p>
         Site-ul este găzduit pe Cloudflare Pages. Furnizorul poate păstra jurnale
-        tehnice de acces (adresă IP, tip de browser) pentru securitate și
+        tehnice de acces (adresa IP, tipul de browser) pentru securitate și
         funcționare, conform propriilor politici.
       </p>
 
       <h2>Drepturile dumneavoastră</h2>
       <p>
-        Conform GDPR aveți dreptul de acces, rectificare, ștergere, restricționare,
-        opoziție și portabilitate a datelor. Pentru oricare dintre ele, scrieți-mi la
-        <a href={`mailto:${business.email}`}>{business.email}</a>. Aveți de asemenea
+        Conform GDPR, aveți dreptul de acces, rectificare, ștergere, restricționare,
+        opoziție și portabilitate a datelor. Pentru a vă exercita oricare dintre aceste
+        drepturi, scrieți-mi la <a href={`mailto:${business.email}`}>{business.email}</a>.
+        Aveți, de asemenea,
         dreptul de a depune o plângere la Autoritatea Națională de Supraveghere a
         Prelucrării Datelor cu Caracter Personal (ANSPDCP).
       </p>

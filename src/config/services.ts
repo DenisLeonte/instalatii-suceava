@@ -28,11 +28,11 @@ export const services: Service[] = [
     title: 'Instalații sanitare',
     schemaName: 'Instalații sanitare',
     short:
-      'Montaj și reparații pentru alimentare cu apă, canalizare și obiecte sanitare.',
+      'Montaj și reparații pentru instalații de alimentare cu apă și canalizare, precum și pentru obiecte sanitare.',
     items: [
-      'Alimentare apă rece și caldă',
-      'Canalizare și scurgere',
-      'Montaj obiecte sanitare',
+      'Alimentare cu apă rece și caldă',
+      'Canalizare și scurgeri',
+      'Montaj de obiecte sanitare',
       'Reparații și depanări',
     ],
     accent: 'blue',
@@ -43,11 +43,11 @@ export const services: Service[] = [
     title: 'Instalații termice',
     schemaName: 'Instalații termice',
     short:
-      'Calorifere, încălzire în pardoseală, montaj centrale și verificări cu cameră termică.',
+      'Calorifere, încălzire în pardoseală, montaj de centrale și verificări cu cameră termică.',
     items: [
-      'Montaj calorifere',
+      'Montaj de calorifere',
       'Încălzire în pardoseală',
-      'Montaj centrale',
+      'Montaj de centrale',
       'Distribuție și echilibrare',
       'Verificarea pierderilor de căldură',
     ],
@@ -59,11 +59,11 @@ export const services: Service[] = [
     title: 'Aer condiționat',
     schemaName: 'Montaj aer condiționat',
     short:
-      'Montaj, întreținere și reparații aer condiționat pentru locuințe și spații comerciale.',
+      'Montaj, întreținere și reparații pentru aparatele de aer condiționat din locuințe și spații comerciale.',
     items: [
-      'Montaj aer condiționat',
+      'Montaj de aparate de aer condiționat',
       'Întreținere periodică',
-      'Reparații și încărcare freon',
+      'Reparații și încărcare cu agent frigorific',
       'Sisteme de ventilație',
     ],
     accent: 'blue',
@@ -71,7 +71,7 @@ export const services: Service[] = [
   {
     key: 'piscine',
     slug: null, // waiting on photographs of a completed installation
-    title: 'Instalații piscine',
+    title: 'Instalații pentru piscine',
     schemaName: 'Instalații pentru piscine',
     short:
       'Instalații hidraulice pentru piscine: circuite, filtrare și racorduri.',
@@ -88,9 +88,9 @@ export const services: Service[] = [
     title: 'Dedurizare a apei',
     schemaName: 'Sisteme de dedurizare a apei',
     short:
-      'Sisteme de dedurizare care protejează instalația și centrala de calcar.',
+      'Sisteme de dedurizare a apei care protejează instalația și centrala de calcar.',
     items: [
-      'Montaj sisteme de dedurizare',
+      'Montaj de sisteme de dedurizare',
       'Racordare la instalația existentă',
       'Verificare și reglaj',
     ],

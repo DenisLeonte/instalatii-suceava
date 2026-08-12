@@ -7,7 +7,7 @@ interface Props {
 }
 const {
   heading = 'Discutăm lucrarea?',
-  text = 'Sunați sau trimiteți-mi câteva fotografii pe WhatsApp. Vă spun ce se poate face și cât costă, înainte să încep.',
+  text = 'Sunați sau trimiteți-mi câteva fotografii pe WhatsApp. Înainte să încep lucrarea, vă spun ce se poate face și cât costă.',
 } = Astro.props;
 ---
 
@@ -16,9 +16,9 @@ const {
     <h2>{heading}</h2>
     <p>{text}</p>
     <div class="cta-band__actions">
-      <a href={telHref} class="btn btn--primary btn--lg">Sună la {business.phone.display}</a>
+      <a href={telHref} class="btn btn--primary btn--lg">Sunați la {business.phone.display}</a>
       <a href={whatsappHref} target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--lg">
-        Trimite fotografii pe WhatsApp
+        Trimiteți fotografii pe WhatsApp
       </a>
     </div>
   </div>
